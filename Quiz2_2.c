@@ -21,7 +21,7 @@ void main()
     {
         for(rows=0 ; rows<Max_ROWS ; rows++)
         {
-            for(i=0 ; i<N ; i++)
+            for(i=0 ; i<M ; i++)
             {
                 for(j=0 ; j<2 ; j++)
                 {
