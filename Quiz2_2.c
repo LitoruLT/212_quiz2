@@ -6,23 +6,40 @@ void main()
     scanf("%lli",&M);
     scanf("%lli",&N);
 
-    long long int data[N][M];
+    long long int data[N][3];
 
     for(i=0 ; i<N ; i++)
     {
-        for(j=0 ; j<M ; j++)
+        for(j=0 ; j<3 ; j++)
         {
-           scanf("%lli",data[i][j]);
+           scanf("%lli",&data[i][j]);
         }
     }
 
-    long long int rows=0,Max_ROWS=70;
-    while(rows < Max_ROWS)
+    long long int rows=0,cols=0,Max_ROWS=70,Max_COLS=M,k;
+    for(cols=0 ; cols<Max_COLS ; cols++)
     {
-        printf("o");
+        for(rows=0 ; rows<Max_ROWS ; rows++)
+        {
+            for(i=0 ; i<N ; i++)
+            {
+                for(j=0 ; j<2 ; j++)
+                {
+                    if(cols==data[i][0]-1 && rows==data[i][1]-1  )
+                    {
+                        for(k=0; k<data[i][2] ;k++)
+                        {
+                            printf("x");
+                            rows++;
+                        }
+                    }
+                }
 
+            }
+            printf("o");
 
-        rows++;
+        }
+        printf("\n");
     }
 
 }
