@@ -1,21 +1,38 @@
 #include<stdio.h>
 #include<string.h>
 #include<stdlib.h>
+#include<ctype.h>
 
 void main()
 {
-
-    char data1[8],data2[8];
-
-    long long int n,i,j;
-    scanf("%s",data1);
-
-    for(i=strlen(data1),j=0 ; i>=0 ;i=i-1,j++)
+    long long int n,i,j,count=0;
+    scanf("%lli",n)
+    for(i=10; i<=n ;i++)
     {
-        data2[0]=data1[i];
-        j++;
+        if(checkPALIN(i))
+        {
+            count++;
+        }
+    }
+    printf("%lli",count);
+
+
+}
+
+
+long long int checkPALIN(long long int n)
+{
+    long long int i,j,temp=0;
+    long long int n2;
+    while(n2=1)
+    {
+
+        i++
     }
 
-    printf("%s    %s",data1,data2);
+    if(strcmp(data1,data2))
+        return 0;
+    else
+        return 1;
 
 }
