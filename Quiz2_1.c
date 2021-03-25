@@ -46,11 +46,36 @@ long long int check_CUBE_NUM(long long int n)
 
 void check_POS_CUBE_FREE(long long int n)
 {
-    long long int i,j=3,pos=2;
+
+    long long int i=0,j=3,pos=2,saveCUBE[n],k;
+    for(k=0; k<n ; k++)
+        saveCUBE[i]=0;
     while(j<=n)
     {
         if(!check_CUBE_NUM(j))
-            pos++;
+        {
+            if(saveCUBE[0]!=0)
+            {
+                for(k=0; saveCUBE[k]!=0 ; k++)
+                {
+                    if( !(j%saveCUBE[k]==0) && saveCUBE[k]!=0)
+                    {
+                        pos++;
+                    }
+
+                }
+            }
+            else
+            {
+                pos++;
+            }
+
+        }
+        else
+        {
+            saveCUBE[i]=j;
+            i++;
+        }
         j++;
     }
     printf("%lli",pos);
