@@ -36,9 +36,10 @@ void main()
                 }
 
             }
-            printf("o");
-
+            if(rows<Max_ROWS)
+                printf("o");
         }
+
         if(cols+1<Max_COLS)
         {
             printf("\n");
