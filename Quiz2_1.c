@@ -29,15 +29,18 @@ void main()
 
 long long int check_CUBE_NUM(long long int n)
 {
-    long long int i,j=n-j+1;
+    long long int i,j=n;
+    j=n-j+1;
     while(1)
     {
+        printf("j == %lli\n",j);
         if(j*j*j == n)
         {
             return 1;
         }
         else if(j*j*j<n)
         {
+
             return 0;
         }
         j=j-1;
