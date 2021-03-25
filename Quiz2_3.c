@@ -9,15 +9,23 @@ void main()
 {
     long long int n,i,j,count=0;
     scanf("%lli",&n);
-    for(i=10; i<=n ;i++)
+    if(n>9)
     {
-        checkPALIN(i);
-        if(checkPALIN(i))
+        for(i=10; i<=n ;i++)
         {
-            count++;
+            if(checkPALIN(i))
+            {
+                count++;
+            }
         }
+        printf("%lli",count+9);
     }
-    printf("%lli",count);
+    else
+    {
+        printf("%lli",n);
+    }
+
+
 
 
 }
@@ -42,7 +50,6 @@ long long int checkPALIN(long long int n)
         i++;
         temp=temp/10;
     }
-    printf("%lli,%lli\n",nsave,n2);
 
     if(nsave==n2)
         return 1;
