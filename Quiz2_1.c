@@ -1,6 +1,7 @@
 #include<stdio.h>
 
-int check_CUBE_NUM(int n);
+long long int check_CUBE_NUM(long long int n);
+void check_POS_CUBE_FREE(long long int n);
 
 void main()
 {
@@ -20,27 +21,39 @@ void main()
     }
     else
     {
-
+        check_POS_CUBE_FREE(n);
     }
 
 
 }
 
-int check_CUBE_NUM(int n)
+long long int check_CUBE_NUM(long long int n)
 {
-    int i,j=n;
-    for(i=0 ; i<3 ; i++)
+    long long int i,j=n-j+1;
+    while(1)
     {
         if(j*j*j == n)
         {
             return 1;
-            break;
         }
         else if(j*j*j<n)
         {
             return 0;
-            break;
         }
         j=j-1;
     }
+}
+
+void check_POS_CUBE_FREE(long long int n)
+{
+    long long int i,j=3,pos=2;
+    while(j<=n)
+    {
+        if(!check_CUBE_NUM(n))
+        {
+            pos++;
+        }
+        j++;
+    }
+    printf("%lli",pos);
 }
