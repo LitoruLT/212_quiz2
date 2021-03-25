@@ -25,9 +25,9 @@ void main()
             {
                 for(j=0 ; j<2 ; j++)
                 {
-                    if(cols==data[i][0]-1 && rows==data[i][1]-1  )
+                    if(cols==data[i][0]-1 && rows<=(data[i][1]-1)+data[i][2] && rows>=data[i][1]-1  )
                     {
-                        for(k=0; k<data[i][2] ;k++)
+                        for(k=0; rows<=(data[i][1]-1)+data[i][2]-1 ;k++)
                         {
                             printf("x");
                             rows++;
